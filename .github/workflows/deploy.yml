@@ -4,6 +4,10 @@ on:
   push:
     branches: [ main ]
 
+# Configuración de permisos para el token de GitHub
+permissions:
+  contents: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -57,3 +61,4 @@ jobs:
         with:
           folder: out
           branch: gh-pages
+          # No es necesario especificar token si se configuran los permisos correctamente
