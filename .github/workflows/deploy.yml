@@ -19,6 +19,14 @@ jobs:
       - name: Install dependencies
         run: npm install --force
 
+      - name: Create downloads directory
+        run: mkdir -p public/downloads
+
+      - name: Create sample files
+        run: |
+          echo "Sample APK file" > public/downloads/controlbovino.apk
+          echo "Sample EXE file" > public/downloads/controlbovino.exe
+
       - name: Build
         run: npm run build
 

@@ -29,16 +29,13 @@ export default function Home() {
     return null
   }
 
-  // Función para manejar la descarga
+  // Función para manejar la descarga - Modificada para usar enlaces directos
   const handleDownload = (type: "mobile" | "desktop") => {
     const fileName = type === "mobile" ? "controlbovino.apk" : "controlbovino.exe"
     const basePath = process.env.NODE_ENV === "production" ? "/control-bovino" : ""
-    const link = document.createElement("a")
-    link.href = `${basePath}/downloads/${fileName}`
-    link.setAttribute("download", fileName)
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+
+    // Abre una nueva pestaña con el archivo para descargar
+    window.open(`${basePath}/downloads/${fileName}`, "_blank")
   }
 
   return (
@@ -47,13 +44,13 @@ export default function Home() {
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <div className="flex items-center gap-2">
             <Image
-              src={process.env.NODE_ENV === "production" ? "https://i.postimg.cc/zD0RMBZy/logo-removebg.png" : "https://i.postimg.cc/zD0RMBZy/logo-removebg.png"}
+              src={process.env.NODE_ENV === "production" ? "/control-bovino/logo.png" : "/logo.png"}
               alt="Control Bovino"
               width={40}
               height={40}
               className="h-10 w-auto"
             />
-            <span className="text-xl font-bold"></span>
+            <span className="text-xl font-bold">CONTROL BOVINO</span>
           </div>
           <nav className="hidden md:flex items-center space-x-6">
             <Link href="#" className="text-sm font-medium text-gray-700 hover:text-gray-900">
@@ -125,7 +122,7 @@ export default function Home() {
       </header>
       <div className="relative h-[300px] md:h-[400px] w-full overflow-hidden">
         <Image
-          src={process.env.NODE_ENV === "production" ? "https://i.postimg.cc/KzbMX38M/Especies-forrajeras.jpg" : "https://i.postimg.cc/KzbMX38M/Especies-forrajeras.jpg"}
+          src={process.env.NODE_ENV === "production" ? "/control-bovino/logo.png" : "/logo.png"}
           alt="Ganado bovino en campo"
           fill
           className="object-cover"
@@ -133,9 +130,9 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
           <div className="text-center text-white px-4 max-w-3xl">
-            <h1 className="text-3xl md:text-5xl font-bold mb-4">ControlBovino</h1>
+            <h1 className="text-3xl md:text-5xl font-bold mb-4">🐄 ControlBovino</h1>
             <p className="text-xl md:text-2xl">
-              Tu aliado para llevar el control de tu ganado, fácil.
+              Tu aliado para llevar el control de tu ganado, fácil y desde el celular.
             </p>
           </div>
         </div>
@@ -145,7 +142,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="relative h-[300px] rounded-lg overflow-hidden shadow-lg">
               <Image
-                src={process.env.NODE_ENV === "production" ? "https://i.postimg.cc/KzbMX38M/Especies-forrajeras.jpg" : "https://i.postimg.cc/KzbMX38M/Especies-forrajeras.jpg"}
+                src={process.env.NODE_ENV === "production" ? "/control-bovino/logo.png" : "/logo.png"}
                 alt="Ganado bovino"
                 fill
                 className="object-cover"
@@ -320,13 +317,13 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center mb-8">
             <div className="flex items-center gap-2 mb-4 md:mb-0">
               <Image
-                src={process.env.NODE_ENV === "production" ? "https://i.postimg.cc/zD0RMBZy/logo-removebg.png" : "https://i.postimg.cc/zD0RMBZy/logo-removebg.png"}
+                src={process.env.NODE_ENV === "production" ? "/control-bovino/logo.png" : "/logo.png"}
                 alt="Control Bovino"
                 width={40}
                 height={40}
                 className="h-10 w-auto"
               />
-              <span className="text-xl font-bold"></span>
+              <span className="text-xl font-bold">CONTROL BOVINO</span>
             </div>
             <nav className="flex flex-wrap justify-center gap-6">
               <Link href="#" className="text-sm font-medium text-gray-700 hover:text-gray-900">
