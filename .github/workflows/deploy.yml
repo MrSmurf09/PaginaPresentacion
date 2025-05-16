@@ -15,75 +15,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Install dependencies
-        run: npm install --force
-
       - name: Create downloads directory
-        run: mkdir -p public/downloads
+        run: mkdir -p downloads
 
       - name: Create sample files
         run: |
-          echo "Sample APK file" > public/downloads/controlbovino.apk
-          echo "Sample EXE file" > public/downloads/controlbovino.exe
-
-      # Verificar la estructura del proyecto
-      - name: List project structure
-        run: find . -type f -not -path "*/node_modules/*" -not -path "*/.git/*" | sort
-
-      # Eliminar cualquier archivo de API que pueda estar causando problemas
-      - name: Remove API routes
-        run: |
-          rm -rf app/api
-          find . -name "route.js" -o -name "route.ts" -o -name "route.tsx" | xargs rm -f || true
-
-      - name: Build
-        run: npm run build
-
-      # Asegurarse de que existe un archivo index.html en la raíz
-      - name: Verify index.html
-        run: |
-          if [ ! -f "out/index.html" ]; then
-            echo "Error: index.html not found in output directory"
-            exit 1
-          fi
+          echo "Sample APK file" > downloads/controlbovino.apk
+          echo "Sample EXE file" > downloads/controlbovino.exe
 
       - name: Add .nojekyll file
-        run: touch out/.nojekyll
-
-      # Crear un archivo 404.html que redirija a index.html
-      - name: Create 404.html
-        run: |
-          cat > out/404.html << 'EOL'
-          <!DOCTYPE html>
-          <html>
-            <head>
-              <meta charset="utf-8">
-              <title>Redirecting...</title>
-              <script>
-                // Extraer la ruta de la URL actual
-                var path = window.location.pathname;
-                // Eliminar el basePath si existe
-                var basePath = '/PaginaPresentacion';
-                if (path.startsWith(basePath)) {
-                  path = path.substr(basePath.length);
-                }
-                // Redirigir a la página principal
-                window.location.href = basePath + '/';
-              </script>
-            </head>
-            <body>
-              <p>Redirecting to home page...</p>
-            </body>
-          </html>
-          EOL
+        run: touch .nojekyll
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: out
+          folder: .
           branch: gh-pages
