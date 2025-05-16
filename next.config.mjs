@@ -12,12 +12,7 @@ const nextConfig = {
   },
   basePath: process.env.NODE_ENV === 'production' ? '/control-bovino' : '',
   assetPrefix: process.env.NODE_ENV === 'production' ? '/control-bovino/' : '',
-  // Excluir rutas API de la exportación estática
-  exportPathMap: async function () {
-    return {
-      '/': { page: '/' },
-    };
-  },
+  // Eliminamos exportPathMap ya que no es compatible con el directorio app
 };
 
 export default nextConfig;

@@ -35,7 +35,16 @@ jobs:
       - name: Remove API routes
         run: |
           rm -rf app/api
-          find . -name "route.js" -o -name "route.ts" -o -name "route.tsx" | xargs rm -f
+          find . -name "route.js" -o -name "route.ts" -o -name "route.tsx" | xargs rm -f || true
+
+      # Crear un archivo vacío para la página principal si no existe
+      - name: Ensure page.tsx exists
+        run: |
+          if [ ! -f "app/page.tsx" ]; then
+            echo "Creating empty page.tsx"
+            mkdir -p app
+            echo "export default function Home() { return <div>Home</div>; }" > app/page.tsx
+          fi
 
       - name: Build
         run: npm run build
