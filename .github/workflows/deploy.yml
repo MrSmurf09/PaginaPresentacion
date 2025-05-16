@@ -27,6 +27,16 @@ jobs:
           echo "Sample APK file" > public/downloads/controlbovino.apk
           echo "Sample EXE file" > public/downloads/controlbovino.exe
 
+      # Verificar la estructura del proyecto
+      - name: List project structure
+        run: find . -type f -not -path "*/node_modules/*" -not -path "*/.git/*" | sort
+
+      # Eliminar cualquier archivo de API que pueda estar causando problemas
+      - name: Remove API routes
+        run: |
+          rm -rf app/api
+          find . -name "route.js" -o -name "route.ts" -o -name "route.tsx" | xargs rm -f
+
       - name: Build
         run: npm run build
 

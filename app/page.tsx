@@ -29,13 +29,18 @@ export default function Home() {
     return null
   }
 
-  // Función para manejar la descarga - Modificada para usar enlaces directos
+  // Función para manejar la descarga - Usando enlaces directos
   const handleDownload = (type: "mobile" | "desktop") => {
     const fileName = type === "mobile" ? "controlbovino.apk" : "controlbovino.exe"
     const basePath = process.env.NODE_ENV === "production" ? "/control-bovino" : ""
 
-    // Abre una nueva pestaña con el archivo para descargar
-    window.open(`${basePath}/downloads/${fileName}`, "_blank")
+    // Crear un enlace y simular clic para descargar
+    const link = document.createElement("a")
+    link.href = `${basePath}/downloads/${fileName}`
+    link.download = fileName
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
   }
 
   return (

@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',  // Genera archivos estáticos
+  output: 'export',
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -8,10 +8,16 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,  // Necesario para exportación estática
+    unoptimized: true,
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/control-bovino' : '',  // Ajusta esto al nombre de tu repositorio
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/control-bovino/' : '',  // Ajusta esto al nombre de tu repositorio
+  basePath: process.env.NODE_ENV === 'production' ? '/control-bovino' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/control-bovino/' : '',
+  // Excluir rutas API de la exportación estática
+  exportPathMap: async function () {
+    return {
+      '/': { page: '/' },
+    };
+  },
 };
 
 export default nextConfig;
