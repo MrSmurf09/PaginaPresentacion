@@ -10,8 +10,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/control-bovino' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/control-bovino/' : '',
+  // Asegúrate de que el basePath coincida exactamente con el nombre del repositorio
+  basePath: process.env.NODE_ENV === 'production' ? '/PaginaPresentacion' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/PaginaPresentacion/' : '',
   // Eliminamos exportPathMap ya que no es compatible con el directorio app
 };
 
