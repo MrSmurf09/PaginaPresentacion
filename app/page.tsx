@@ -214,10 +214,8 @@ export default function Home() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-8">¿Tienes dudas?</h2>
             <div className="flex items-center justify-center gap-2 text-xl">
-              <div>
-                <Mail className="h-6 w-6" />
-                <span>Escríbenos a: </span>
-              </div>
+              <Mail className="h-6 w-6" />
+              <span>Escríbenos a: </span>
               <a href="mailto:controlbovino@ejemplo.com" className="font-medium text-blue-600 hover:underline">
                 proyectocontrolbovino@gmail.com
               </a>
