@@ -74,15 +74,6 @@ export default function Home() {
                   <Button
                     variant="outline"
                     className="flex flex-col items-center justify-center h-32 p-4"
-                    onClick={() => handleDownload("mobile")}
-                  >
-                    <Smartphone className="h-12 w-12 mb-2" />
-                    <span>Versión Móvil</span>
-                    <span className="text-xs text-gray-500 mt-1">APK para Android</span>
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className="flex flex-col items-center justify-center h-32 p-4"
                     onClick={() => handleDownload("desktop")}
                   >
                     <Laptop className="h-12 w-12 mb-2" />
@@ -271,15 +262,6 @@ export default function Home() {
                     <DialogDescription>Seleccione la versión que desea descargar</DialogDescription>
                   </DialogHeader>
                   <div className="grid grid-cols-2 gap-4 py-4">
-                    <Button
-                      variant="outline"
-                      className="flex flex-col items-center justify-center h-32 p-4"
-                      onClick={() => handleDownload("mobile")}
-                    >
-                      <Smartphone className="h-12 w-12 mb-2" />
-                      <span>Versión Móvil</span>
-                      <span className="text-xs text-gray-500 mt-1">Proximamente...</span>
-                    </Button>
                     <Button
                       variant="outline"
                       className="flex flex-col items-center justify-center h-32 p-4"
