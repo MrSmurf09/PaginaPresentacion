@@ -43,7 +43,7 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       <header className="border-b bg-white">
-        <div className="container mx-auto flex h-16 items-center justify-center- px-4">
+        <div className="container mx-auto flex h-16 items-center justify-center px-4">
           <div className="flex items-center gap-2">
             <Image src="https://i.postimg.cc/zD0RMBZy/logo-removebg.png" alt="Control Bovino" width={40} height={40} className="h-10 w-auto" />
             <span className="text-xl font-bold"></span>
@@ -252,7 +252,7 @@ export default function Home() {
       </main>
       <footer className="bg-white border-t py-8">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center mb-8">
+          <div className="flex flex-col md:flex-row justify-center items-center mb-8">
             <div className="flex items-center gap-2 mb-4 md:mb-0">
               <Image src="https://i.postimg.cc/zD0RMBZy/logo-removebg.png" alt="Control Bovino" width={40} height={40} className="h-10 w-auto" />
             </div>
