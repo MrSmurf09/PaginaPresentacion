@@ -63,7 +63,7 @@ export default function Home() {
                   <span className="sm:hidden">App</span>
                 </Button>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-md items-center mx-4">
+              <DialogContent className="sm:max-w-md w-[90vw] max-w-[400px] mx-auto">
                 <DialogHeader>
                   <DialogTitle>Descargar aplicación</DialogTitle>
                   <DialogDescription>Seleccione la versión que desea descargar</DialogDescription>
@@ -247,7 +247,7 @@ export default function Home() {
                     Descargar ControlBovino
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="sm:max-w-md mx-4">
+                <DialogContent className="sm:max-w-md w-[90vw] max-w-[400px] mx-auto">
                   <DialogHeader>
                     <DialogTitle>Descargar aplicación</DialogTitle>
                     <DialogDescription>Seleccione la versión que desea descargar</DialogDescription>
