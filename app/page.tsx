@@ -95,7 +95,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
           <div className="text-center text-white px-4 max-w-3xl">
             <h1 className="text-3xl md:text-5xl font-bold mb-4">ControlBovino</h1>
-            <p className="text-xl md:text-2xl">Tu aliado para llevar el control de tu ganado.</p>
+            <p className="text-lg md:text-2xl">Tu aliado para llevar el control de tu ganado.</p>
           </div>
         </div>
       </div>
@@ -111,8 +111,8 @@ export default function Home() {
               />
             </div>
             <div className="w-full">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">Gestión sencilla para tu ganado</h2>
-              <p className="text-gray-700 mb-6 text-sm md:text-base leading-relaxed">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Gestión sencilla para tu ganado</h2>
+              <p className="text-gray-700 mb-6 text-base md:text-lg leading-relaxed">
                 ¿Te cuesta recordar cuándo paren tus vacas? ¿O cuándo toca desparasitar? Con ControlBovino, puedes
                 registrar toda la información de tus animales y fincas desde el celular o el computador, de forma
                 sencilla y rápida. ¡Ideal para el pequeño ganadero que quiere llevar su finca al siguiente nivel!
@@ -123,8 +123,8 @@ export default function Home() {
 
         <section className="bg-gray-50 py-12">
           <div className="container mx-auto px-4 max-w-full">
-            <h2 className="text-2xl md:text-3xl font-bold text-center mb-2">¿Qué puedes hacer con ControlBovino?</h2>
-            <p className="text-center text-gray-600 mb-10 text-sm md:text-base px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-2">¿Qué puedes hacer con ControlBovino?</h2>
+            <p className="text-center text-gray-600 mb-10 text-base md:text-lg px-4">
               Todo en un solo lugar, sin papeles ni cuadernos que se pierden.
             </p>
 
@@ -134,7 +134,7 @@ export default function Home() {
                   <CheckCircle className="h-6 w-6 text-green-500 mr-2" />
                   <h3 className="text-xl font-semibold">Registra tus fincas</h3>
                 </div>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-base">
                   Registra tus fincas y potreros de manera organizada para tener un mejor control de tu ganado.
                 </p>
               </div>
@@ -144,7 +144,7 @@ export default function Home() {
                   <CheckCircle className="h-6 w-6 text-green-500 mr-2" />
                   <h3 className="text-xl font-semibold">Datos de cada vaca</h3>
                 </div>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-base">
                   Guarda datos de cada vaca: nombre, raza, fecha de nacimiento y toda la información importante.
                 </p>
               </div>
@@ -154,7 +154,7 @@ export default function Home() {
                   <CheckCircle className="h-6 w-6 text-green-500 mr-2" />
                   <h3 className="text-xl font-semibold">Control de embarazos</h3>
                 </div>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-base">
                   Anota embarazos y recibe avisos cuando se acerque el parto para estar preparado.
                 </p>
               </div>
@@ -164,7 +164,7 @@ export default function Home() {
                   <CheckCircle className="h-6 w-6 text-green-500 mr-2" />
                   <h3 className="text-xl font-semibold">Desparasitaciones</h3>
                 </div>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-base">
                   Lleva el control de desparasitaciones y mantén a tu ganado saludable con recordatorios oportunos.
                 </p>
               </div>
@@ -174,7 +174,7 @@ export default function Home() {
                   <CheckCircle className="h-6 w-6 text-green-500 mr-2" />
                   <h3 className="text-xl font-semibold">Producción de leche</h3>
                 </div>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-base">
                   Registra la producción de leche diaria o semanal y lleva un control preciso de tu rendimiento.
                 </p>
               </div>
@@ -184,7 +184,7 @@ export default function Home() {
                   <CheckCircle className="h-6 w-6 text-green-500 mr-2" />
                   <h3 className="text-xl font-semibold">Reportes simples</h3>
                 </div>
-                <p className="text-gray-700">
+                <p className="text-gray-700 text-base">
                   Ve reportes simples que te muestran cómo va tu ganado y toma mejores decisiones.
                 </p>
               </div>
@@ -197,7 +197,7 @@ export default function Home() {
             <div className="bg-white p-6 rounded-lg shadow-lg text-center">
               <Bell className="h-12 w-12 mx-auto mb-4 text-yellow-500" />
               <h3 className="text-xl font-bold mb-3">🔔 Recibe recordatorios importantes</h3>
-              <p className="text-gray-700">
+              <p className="text-gray-700 text-base leading-relaxed">
                 No más olvidos. ControlBovino te avisa cuándo se acerca un parto o cuándo debes desparasitar. Si varias
                 vacas tienen la misma fecha, recibes un solo aviso, para que no te llenes de notificaciones.
               </p>
@@ -206,7 +206,7 @@ export default function Home() {
             <div className="bg-white p-6 rounded-lg shadow-lg text-center">
               <Cloud className="h-12 w-12 mx-auto mb-4 text-blue-500" />
               <h3 className="text-xl font-bold mb-3">☁️ Tus datos siempre guardados</h3>
-              <p className="text-gray-700">
+              <p className="text-gray-700 text-base leading-relaxed">
                 Toda la información se guarda en la nube, así no se pierde si cambias de celular o se apaga tu
                 computador.
               </p>
@@ -215,7 +215,7 @@ export default function Home() {
             <div className="bg-white p-6 rounded-lg shadow-lg text-center">
               <CheckCircle className="h-12 w-12 mx-auto mb-4 text-green-500" />
               <h3 className="text-xl font-bold mb-3">🤝 Acompañamos tu trabajo diario</h3>
-              <p className="text-gray-700">
+              <p className="text-gray-700 text-base leading-relaxed">
                 ControlBovino fue creado pensando en los pequeños productores. Sabemos que el día a día en la finca es
                 exigente, por eso te damos una herramienta que te ahorra tiempo y te ayuda a tomar mejores decisiones
                 para el bienestar de tus animales.
@@ -226,8 +226,8 @@ export default function Home() {
 
         <section className="bg-gray-50 py-16">
           <div className="container mx-auto px-4 text-center max-w-full">
-            <h2 className="text-2xl md:text-3xl font-bold mb-8">¿Tienes dudas?</h2>
-            <div className="flex flex-col items-center justify-center gap-2 text-lg md:text-xl">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8">¿Tienes dudas?</h2>
+            <div className="flex flex-col items-center justify-center gap-2 text-xl md:text-2xl">
               <div className="flex items-center justify-center gap-2">
                 <Mail className="h-6 w-6" />
                 <span>Escríbenos a: </span>
