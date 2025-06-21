@@ -41,22 +41,29 @@ export default function Home() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col overflow-x-hidden">
       <header className="border-b bg-white">
-        <div className="container mx-auto flex h-16 items-center justify-center px-4">
+        <div className="container mx-auto flex h-16 items-center justify-between px-4 max-w-full">
           <div className="flex items-center gap-2">
-            <Image src="https://i.postimg.cc/zD0RMBZy/logo-removebg.png" alt="Control Bovino" width={40} height={40} className="h-10 w-auto" />
+            <Image
+              src="https://i.postimg.cc/zD0RMBZy/logo-removebg.png"
+              alt="Control Bovino"
+              width={40}
+              height={40}
+              className="h-10 w-auto"
+            />
             <span className="text-xl font-bold"></span>
           </div>
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="flex items-center">
             <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
               <DialogTrigger asChild>
-                <Button variant="outline" className="flex items-center gap-2">
+                <Button variant="outline" className="flex items-center gap-2 bg-white text-black text-sm px-3 py-2">
                   <Download className="h-4 w-4" />
-                  Descargar app
+                  <span className="hidden sm:inline">Descargar app</span>
+                  <span className="sm:hidden">App</span>
                 </Button>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-md items-center">
+              <DialogContent className="sm:max-w-md items-center mx-4">
                 <DialogHeader>
                   <DialogTitle>Descargar aplicación</DialogTitle>
                   <DialogDescription>Seleccione la versión que desea descargar</DialogDescription>
@@ -64,7 +71,7 @@ export default function Home() {
                 <div className="grid gap-4 py-4">
                   <Button
                     variant="outline"
-                    className="flex flex-col items-center justify-center h-32 p-4"
+                    className="flex flex-col items-center justify-center h-32 p-4 bg-white text-black"
                     onClick={() => handleDownload("desktop")}
                   >
                     <Laptop className="h-12 w-12 mb-2" />
@@ -75,30 +82,37 @@ export default function Home() {
               </DialogContent>
             </Dialog>
           </nav>
-          <div className="flex items-center">
-          </div>
         </div>
       </header>
       <div className="relative h-[300px] md:h-[400px] w-full overflow-hidden">
-        <Image src="https://i.postimg.cc/KzbMX38M/Especies-forrajeras.jpg" alt="Ganado bovino en campo" fill className="object-cover" priority />
+        <Image
+          src="https://i.postimg.cc/KzbMX38M/Especies-forrajeras.jpg"
+          alt="Ganado bovino en campo"
+          fill
+          className="object-cover"
+          priority
+        />
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
           <div className="text-center text-white px-4 max-w-3xl">
             <h1 className="text-3xl md:text-5xl font-bold mb-4">ControlBovino</h1>
-            <p className="text-xl md:text-2xl">
-              Tu aliado para llevar el control de tu ganado.
-            </p>
+            <p className="text-xl md:text-2xl">Tu aliado para llevar el control de tu ganado.</p>
           </div>
         </div>
       </div>
       <main className="flex-1">
-        <section className="container mx-auto py-12 px-4">
+        <section className="container mx-auto py-12 px-4 max-w-full">
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="relative h-[300px] rounded-lg overflow-hidden shadow-lg">
-              <Image src="https://i.postimg.cc/KzbMX38M/Especies-forrajeras.jpg" alt="Ganado bovino" fill className="object-cover" />
+            <div className="relative h-[300px] rounded-lg overflow-hidden shadow-lg w-full">
+              <Image
+                src="https://i.postimg.cc/KzbMX38M/Especies-forrajeras.jpg"
+                alt="Ganado bovino"
+                fill
+                className="object-cover"
+              />
             </div>
-            <div>
-              <h2 className="text-3xl font-bold mb-4">Gestión sencilla para tu ganado</h2>
-              <p className="text-gray-700 mb-6">
+            <div className="w-full">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">Gestión sencilla para tu ganado</h2>
+              <p className="text-gray-700 mb-6 text-sm md:text-base leading-relaxed">
                 ¿Te cuesta recordar cuándo paren tus vacas? ¿O cuándo toca desparasitar? Con ControlBovino, puedes
                 registrar toda la información de tus animales y fincas desde el celular o el computador, de forma
                 sencilla y rápida. ¡Ideal para el pequeño ganadero que quiere llevar su finca al siguiente nivel!
@@ -108,13 +122,13 @@ export default function Home() {
         </section>
 
         <section className="bg-gray-50 py-12">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-2">¿Qué puedes hacer con ControlBovino?</h2>
-            <p className="text-center text-gray-600 mb-10">
+          <div className="container mx-auto px-4 max-w-full">
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-2">¿Qué puedes hacer con ControlBovino?</h2>
+            <p className="text-center text-gray-600 mb-10 text-sm md:text-base px-4">
               Todo en un solo lugar, sin papeles ni cuadernos que se pierden.
             </p>
 
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-white p-6 rounded-lg shadow">
                 <div className="flex items-center mb-4">
                   <CheckCircle className="h-6 w-6 text-green-500 mr-2" />
@@ -178,8 +192,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-16 container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
+        <section className="py-16 container mx-auto px-4 max-w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-lg text-center">
               <Bell className="h-12 w-12 mx-auto mb-4 text-yellow-500" />
               <h3 className="text-xl font-bold mb-3">🔔 Recibe recordatorios importantes</h3>
@@ -211,24 +225,29 @@ export default function Home() {
         </section>
 
         <section className="bg-gray-50 py-16">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-8">¿Tienes dudas?</h2>
-            <div className="flex items-center justify-center gap-2 text-xl">
-              <Mail className="h-6 w-6" />
-              <span>Escríbenos a: </span>
-              <a href="mailto:controlbovino@ejemplo.com" className="font-medium text-blue-600 hover:underline">
+          <div className="container mx-auto px-4 text-center max-w-full">
+            <h2 className="text-2xl md:text-3xl font-bold mb-8">¿Tienes dudas?</h2>
+            <div className="flex flex-col items-center justify-center gap-2 text-lg md:text-xl">
+              <div className="flex items-center justify-center gap-2">
+                <Mail className="h-6 w-6" />
+                <span>Escríbenos a: </span>
+              </div>
+              <a
+                href="mailto:proyectocontrolbovino@gmail.com"
+                className="font-medium text-blue-600 hover:underline break-all px-4"
+              >
                 proyectocontrolbovino@gmail.com
               </a>
             </div>
             <div className="mt-10">
               <Dialog>
                 <DialogTrigger asChild>
-                  <Button size="lg" className="px-8">
+                  <Button size="lg" className="px-6 md:px-8">
                     <Download className="h-5 w-5 mr-2" />
                     Descargar ControlBovino
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="sm:max-w-md">
+                <DialogContent className="sm:max-w-md mx-4">
                   <DialogHeader>
                     <DialogTitle>Descargar aplicación</DialogTitle>
                     <DialogDescription>Seleccione la versión que desea descargar</DialogDescription>
@@ -236,7 +255,7 @@ export default function Home() {
                   <div className="grid gap-4 py-4">
                     <Button
                       variant="outline"
-                      className="flex flex-col items-center justify-center h-32 p-4"
+                      className="flex flex-col items-center justify-center h-32 p-4 bg-white text-black"
                       onClick={() => handleDownload("desktop")}
                     >
                       <Laptop className="h-12 w-12 mb-2" />
@@ -254,7 +273,13 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-center items-center mb-8">
             <div className="flex items-center gap-2 mb-4 md:mb-0">
-              <Image src="https://i.postimg.cc/zD0RMBZy/logo-removebg.png" alt="Control Bovino" width={40} height={40} className="h-10 w-auto" />
+              <Image
+                src="https://i.postimg.cc/zD0RMBZy/logo-removebg.png"
+                alt="Control Bovino"
+                width={40}
+                height={40}
+                className="h-10 w-auto"
+              />
             </div>
           </div>
           <div className="text-center text-sm text-gray-500">
